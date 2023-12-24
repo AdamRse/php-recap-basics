@@ -1,35 +1,26 @@
-Tableau se dit Array en Anglais, terme important pour les recherches dans la doc.
+> [!NOTE]
+> Tableau se dit Array en Anglais, terme important pour les recherches dans la doc.
 
-Comme certains ont parfois du mal à formuler leur recherche google, je met ici les requêtes google conseillées pour chaque exercice.
-Dans la doc officielle https://www.php.net, la structure de la page est souvent la suivante :
-    -Une description
-    -La syntaxe complète, avec entre parenthèses les paramètres obligatoires, et entre crochet les optionnels.
-    -La description des paramètres attendus
-        -les paramètres renvient parfois sur une page complète pour avoir de détail du paramètre sélectionné
-    -La description de ce qui est retourné (souvent pour une fonction par exemple)
-    -Des exemples d'utilisation
-        -Les exemples sont très utiles et parlants car ils donnent du contexte, allez toujours les voir si ça vous parait flou, ça aide BEAUCOUP
+## Intro
+- Il y a 2 types de tableaux sur php, qui se ressemblent beaucoup. Les tableaux scalaires et les tableaux associatifs.
+- Ils se différencient de par leur type d'index.
+    - L'index (ou clé) permet d'accéder à divers contenu du tableau. Comme si le tableau était une banque, on a des clés, pour aller chercher le contenu des coffres de la banque (valeur).
+- On utilise les crochets [ ] pour accéder au contenu du tableau (au coffres de la banque)
 
-INTRO :
-Il y a 2 types de tableaux sur php, qui se ressemblent beaucoup. Les tableaux scalaires et les tableaux associatifs.
-Ils se différencient de par leur type d'index.
-    L'index (ou clé) permet d'accéder à divers contenu du tableau. Comme si le tableau était une banque, on a des clés, pour aller chercher le contenu des coffres de la banque (valeur).
-On utilise les crochets [ ] pour accéder au contenu du tableau (au coffres de la banque)
-
-TABLEAU SCALAIRE
+## TABLEAU SCALAIRE
 Les index sont toujours des nombres (intege, int), la plupart du temps ces nombres se suivent à partir de 0, mais ce n'est pas une obligation.
-<?php
+```php
 //Je déclare un tableau avec 3 valeurs
 $animaux = array("chat", "chien", "souris"); 
-?>
+```
 
 Un tableau $banque s'est initialisé avec 3 clés automatiques, qui contiennent les valeurs "chat", "chien", et "souris".
-Comment on sait quelle est le nom des clés qui ont été créées pour quelle valeur ?
+> Comment on sait quelle est le nom des clés qui ont été créées pour quelle valeur ?
 C'est toujours dans le même ordre. La première valeur ("chat") prend la clé O, la deuxième valeur ("chien") prend la clé 1, la 3ème prend la clé 2, et ainsi de suite pour chaque valeur.
 On peu vérifier le contenu avec un var_dump() du tableau nous affichera les clés entre crochet, et les valeurs qu'elles contiennent.
 
-ACCES AU VALEURS
-<?php
+### ACCES AU VALEURS
+```php
 //Je créé une variable chat qui va contenir la valeur de l'index 0 du tableau $animaux, donc "chat"
 //C'est une copie, le chat n'est pas effacé du tableau
 $chat = $animaux[0];
@@ -41,11 +32,11 @@ $animaux[2]="Elephant";
 
 //J'ajoute une valeur au tableau
 $animaux[]="poule" //Les crochets vide signifie que php va créer un index à la suite du dernier index. Si le dernier index du tableau est 2 comme ici, l'index de "poule" sera 3.
-?>
+```
 
-TABLEAU ASSOCIATIF
+## TABLEAU ASSOCIATIF
 Même principe que le tableau scalaire, mais les index (clés) peut être des "chaines de caractère (string)".
-<?php
+```php
 //On déclare un tableau associatif, on doit donc utiliser une syntaxe pour créer les index, vu que ce ne sont plus forcément des nombres (int), ça peut être ce qu'on veut.
 $tableauAssoc("cle1" => "valeur de cle1", "cle2" => "valeur de cle2");
 
@@ -62,10 +53,6 @@ $tableauAssoc["cle1"] = "Une autre valeur";
 $tableauAssoc["cle368"]="Ceci est la clé 368";
 
 //$tableauAssoc contient donc maintenant ["cle1"]=>"Une autre valeur", ["cle2"]=>"valeur de cle2", $tableauAssoc["cle368"]="Ceci est la clé 368"
-?>
-
-Note : On parcourira les tableaux quand on fera les boucles, il faut que cette partie soit intégrée à 100%
-
-
-1. "php create array"
-
+```
+> [!NOTE]
+> Note : On parcourira les tableaux quand on fera les boucles, il faut que cette partie soit intégrée à 100%
