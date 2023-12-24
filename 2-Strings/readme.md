@@ -1,5 +1,6 @@
-"..." signifie qu'il faut décommenter et compléter la ligne, c'est pour aider. Aidez vous du doc-explications.md de ce répertoire, et de la doc officielle
-Por coder les exercices, utilisez un compilateur php local (devilbox, php), ou sur un site comme https://extendsclass.com/fr/php.html
+> [!NOTE]
+> "..." signifie qu'il faut décommenter et compléter la ligne, c'est pour aider. Aidez vous du doc-explications.md de ce répertoire, et de la doc officielle
+Pour coder les exercices, utilisez un compilateur php local (devilbox, php), ou sur un site comme https://extendsclass.com/fr/php.html
 
 1)
 Créer une variable $nom et $prenom avec un nom et un prénom dedans. L'afficher ensuite dans un echo avec un espace entre les 2, et en **double quote**.
