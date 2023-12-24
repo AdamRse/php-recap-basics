@@ -5,7 +5,7 @@ Por coder les exercices, utilisez un compilateur php local (devilbox, php), ou s
 Créer un tableau (une variable de type tableau)
 
 ```php
-$tableau = ...
+//$tableau = ...
 
 echo "<pre>";
 var_dump($tableau);
@@ -19,7 +19,7 @@ echo "</pre>";
 Créer un tableau scalaire avec les valeurs "Oui", "non", et "Peut-être". Les index de ces valeurs doivent être créés automatiquement par php.
 
 ```php
-$scalaire = ...
+//$scalaire = ...
 
 echo "<pre>";
 var_dump($scalaire);
@@ -33,7 +33,7 @@ echo "</pre>";
 Créer un tableau associatif avec les valeurs avec les clés "pays", "ville", et leur valeurs associées "Slovénie", "Ljubljana".
 
 ```php
-$assoc = ...
+//$assoc = ...
 
 echo "<pre>";
 var_dump($assoc);
@@ -48,7 +48,7 @@ echo "</pre>";
 En 2 lignes de code, ajouter la valeur "En fait non" à la suite dans le tableau $scalaire
 
 ```php
-$scalaire...
+//$scalaire...
 
 echo "<pre>";
 var_dump($scalaire);
@@ -63,7 +63,7 @@ Attention, concentration !
 Mettre la valeur de la clé "pays" du tableau $assoc, DANS le tableau $scalaire (à la suite des autres clés).
 
 ```php
-$scalaire...
+//$scalaire...
 
 echo "<pre>";
 var_dump($scalaire);
@@ -77,7 +77,7 @@ echo "</pre>";
 Ajoutez la valeur de l'index 2 de $scalaire, dans le tableau $assoc, avec un index appelé "assoc"
 
 ```php
-$assoc...
+//$assoc...
 
 echo "<pre>";
 var_dump($assoc);
@@ -91,7 +91,7 @@ echo "</pre>";
 Ajoutez le tableau $assoc au tableau $scalaire, dans l'index 11 (du tableau $scalaire).
 
 ```php
-$scalaire...
+//$scalaire...
 
 echo "<pre>";
 var_dump($scalaire);
