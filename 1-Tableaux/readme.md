@@ -1,4 +1,4 @@
-... signifie qu'il faut compléter la ligne. Aidez vous du doc-explications.txt et de la doc officielle
+"..." signifie qu'il faut décommenter et compléter la ligne, c'est pour aider. Aidez vous du doc-explications.txt et de la doc officielle
 Por coder les exercices, utilisez un compilateur php local (devilbox, php), ou sur un site comme https://extendsclass.com/fr/php.html
 
 1)
@@ -45,7 +45,7 @@ echo "</pre>";
 
 
 4)
-En 2 lignes de code, ajouter la valeur "En fait non" à la suite dans le tableau $scalaire
+Ajouter la valeur "En fait non" à la suite dans le tableau $scalaire
 
 ```php
 //$scalaire...
