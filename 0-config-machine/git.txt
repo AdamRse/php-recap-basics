@@ -1,0 +1,55 @@
+UTILISER GIT SUR UBUNTU (QUAND VOUS ETES DEJA IDENTIFIE PAR GITHUB VIA UNE CLE SSH)
+
+-J'écrirai les tips en commençant pas un tiret
+    -Le texte indenté serra en rapport avec la ligne du dessus
+    -nouvelle ligne = nouvelle instruction
+-je pars du princippe que vous avez une clé SSh d'authentification sur github
+-Les commandes git s'effectuent toujours DANS le repo local (répertoire du projet).
+
+1) Allez dans le répertoire où vous voulez déposer votre projet, dans l'exemple je prendrai /var/www/html , remplacez juste ce chemin par le votre.
+    sur UNIX (ubuntu et dérivés) : cd /var/www/html
+        -un chemin qui commence pas / indique un chemin à partir de la racine de l'ordinateur
+        -un chemin qui commence par un nom de dossier indique un chemin à partir du répertoire actuel
+        -utilisez la touche tabulation pour naviguer, ça évite les erreurs. tabulation autocomplète le nom du fichier/dossier.
+            -Pour éviter de sortir de la commande cd, double tab pour obtenir le nom des dossiers du répertoire et éviter de faire un ls
+
+2) SI vous avez un projet sur github :
+|   Importez le projet sur votre ordinateur local :
+|   git clone [adresse ssh github du projet]
+OU      -Par exemple, je peux cloner ce repo avec : git clone git@github.com:AdamRse/php-recap-basics.git
+|
+2) SI vous démarrez un nouveau projet de votre initiative :
+    créez le repo sur github (new repository)
+        -restez sur la page, vous aurez besoin de l'adresse ssh du répertoire
+    créez le répertoire du projet avec mkdir [nom du projet]
+        -Le nom du projet sans espaces si possible, sinon il faut passer le nom du répertoire dans une string et c'est un bordel
+    entrez dans votre répertoire avec cd
+        -je vous conseille de créer un fichier index.html (ou php) pour envoyer quelque chose lors du push, ou juste un readme.md, même vide
+    initialisez le repo avec git init
+        -Il peut y avoir un warning à cet étape où git vous demmande de lui donner le nom par défaut de la branche de travail principale
+        -Dans ce cas on va l'appeler master par défaut : git config --global init.defaultBranch master
+    ajoutez les fichier du répertoire avec : git add .
+        -git add sert à donner à git les fichiers qui devront être pris en compte dans le commit
+        -n'oubliez pas le . qui veut dire "all"
+    faites un commit : git commit -m "init"
+        -le commit prend une "photo" de tous les fichiers du projet que vous avez sélectionné avec "git add"
+        - -m pour donner une description à la mise à jour que vous allez faire sur le repo.
+        -le message du -m dans une string, j'ai mis init par exemple, oubliez pas l'espace en -m et le message
+    vous pouvez envoyer le projet : git push [adresse ssh du projet]
+        -par exemple sur ce repo j'ai fait : git push git@github.com:AdamRse/php-recap-basics.git
+
+3) Une fois que vous avez bossé et vous avez besoin de sauvegarder votre travail sur github :
+    Récupérer les fichiers du repo github : git pull [adresse ssh du projet]
+        -ETAPE OPTIONNELLE quand vous bossez seul, vous pouvez juste faire un push, car personne n'a modifié votre code entre temps.
+        -Quand vous bossez à plusieurs, ça permet de récupérer le code du projet à jour, si votre collègue a fait des changements pendant votre session de code
+        -En cas de conflit il y a une étape de résolution de code à faire et à valider. En gros on réécris le code définitif avec l'ajout du code du collègue.
+    ajouter tous les nouveaux fichiers : git add .
+        -git add sert à donner à git les fichiers qui devront être pris en compte dans le commit
+    faites un commit : git commit -m "j'ai fait ça"
+        -le commit prend une "photo" de tous les fichiers du projet que vous avez sélectionné avec "git add"
+    vous pouvez envoyer le projet : git push [adresse ssh du projet]
+        -par exemple sur ce repo j'ai fait : git push git@github.com:AdamRse/php-recap-basics.git
+
+4) Lorsque vous travaillez à plusieurs sur le même repo, toujours : git pull [adresse ssh du projet]
+    -Pour commencer à bosser avec un code à jour, sinon vous aurez plus des conflits à gérer plus tard et c'est relou.
+    -bien penser à entrer dans le répertoire du repo sur votre machine avant de faire les commandes git.
