@@ -4,7 +4,7 @@ Por coder les exercices, utilisez un compilateur php local (devilbox, php), ou s
 1)
 Créer un tableau (une variable de type tableau)
 
-```
+```php
 $tableau = ...
 
 echo "<pre>";
@@ -18,7 +18,7 @@ echo "</pre>";
 2)
 Créer un tableau scalaire avec les valeurs "Oui", "non", et "Peut-être". Les index de ces valeurs doivent être créés automatiquement par php.
 
-```
+```php
 $scalaire = ...
 
 echo "<pre>";
@@ -32,7 +32,7 @@ echo "</pre>";
 3)
 Créer un tableau associatif avec les valeurs avec les clés "pays", "ville", et leur valeurs associées "Slovénie", "Ljubljana".
 
-```
+```php
 $assoc = ...
 
 echo "<pre>";
@@ -47,7 +47,7 @@ echo "</pre>";
 4)
 En 2 lignes de code, ajouter la valeur "En fait non" à la suite dans le tableau $scalaire
 
-```
+```php
 $scalaire...
 
 echo "<pre>";
@@ -62,7 +62,7 @@ echo "</pre>";
 Attention, concentration !
 Mettre la valeur de la clé "pays" du tableau $assoc, DANS le tableau $scalaire (à la suite des autres clés).
 
-```
+```php
 $scalaire...
 
 echo "<pre>";
@@ -76,7 +76,7 @@ echo "</pre>";
 6)
 Ajoutez la valeur de l'index 2 de $scalaire, dans le tableau $assoc, avec un index appelé "assoc"
 
-```
+```php
 $assoc...
 
 echo "<pre>";
@@ -90,7 +90,7 @@ echo "</pre>";
 7)
 Ajoutez le tableau $assoc au tableau $scalaire, dans l'index 11 (du tableau $scalaire).
 
-```
+```php
 $scalaire...
 
 echo "<pre>";
