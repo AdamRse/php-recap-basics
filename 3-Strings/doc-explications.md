@@ -1,7 +1,7 @@
 # Strings
 Une string est une chaîne de caractère en français.
 
-### Déclarer une string dans une variable
+## Déclarer une string dans une variable
 ```php
 //Avec les doubles quotes
 $texte = " String ";
