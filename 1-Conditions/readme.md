@@ -40,12 +40,19 @@
 - Même exercice que le précédent, mais n'utilisez aucun opérateur logique && ou || (Indice dans la doc doc-explications.md)
 
 7)
-- initialisez une variable $nb avec un chiffre aléatoire entre 0 et 1
+- initialiser une variable $nb avec un chiffre aléatoire entre 0 et 1
 - si $nb est différent de faux, afficher : "C'est vrai !"
 - Sinon afficher "C'es faux !";
 - A la suite, dans tous les cas faire un var_dump() de $nb.
 - Indice : Mieux vaut ne pas vérifier le typage, $nb n'est pas strictement un booléen vrai ou faux, mais un équivalent int...
 
 8)
-- Initializez une variable $txt avec la string "les petits poissons"
-- strpos()
+- Initializer une variable $txt avec la string "les petits poissons"
+- Initialiser une variable $trouve avec la string "pois"
+- $trouve existe dans la variable $txt, afficher : "Trouvé !";
+> [!TIP]
+> Pour trouver si un caractère ou une chaîne de caractères (donc une string), est présent dans une autre string, utilisez strpos().
+> strpos() est une fonction php qui vous renvoie où se trouve la string recherchée.
+> Exmple : strpo("Chaîne de caractère", "de") renverra 7. Si la string à trouver n'existe pas, la fonction renvoie false.
+> https://www.php.net/manual/fr/function.strpos.php
+- Une fois que le code fonctionne, changer le contenu de la variable $trouve. Maintenant $trouve contient "les". Si le code ne marche plus, n'hésitez pas à var_dump() votre fonction strpos() !
