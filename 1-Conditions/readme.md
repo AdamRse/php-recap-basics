@@ -47,7 +47,7 @@
 - Indice : Mieux vaut ne pas vérifier le typage, $nb n'est pas strictement un booléen vrai ou faux, mais un équivalent int...
 
 8)
-- Initializer une variable $txt avec la string "les petits poissons"
+- Initialiser une variable $txt avec la string "les petits poissons"
 - Initialiser une variable $trouve avec la string "pois"
 - $trouve existe dans la variable $txt, afficher : "Trouvé !";
 > [!TIP]
