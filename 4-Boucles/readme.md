@@ -82,3 +82,16 @@ echo "</pre>";
 
 > [!TIP]
 > la fonction native "unset()" peut supprimer proprement la clé d'un tableau.
+
+### Bonus
+Attention, le dernier est un peu plus difficile (mais la solution est simple !) :
+10)
+- Réaliser un damier en html.
+- Vous ne pouvez écrire qu'une seule case en html, et l'appeler dans une boucle.
+- Les cases doivent être dans des lignes "<div></div>"
+- Voilà le code html d'une case "<div style='margin: 2px; display:inline-block; height: 20px; width: 20px; border: 1px solid #000"'></div>"
+- La taille du damier sera de 10x10.
+- Les cases doivent être colorées en noir ou en blanc comme sur un vrai damier.
+
+> [!TIP]
+> Pour colorer les cases, vous aurez mesoin de % (modulo)

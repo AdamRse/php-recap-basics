@@ -1,6 +1,7 @@
 # Fonctions
 - Une fonction est un bloc de code qu'on peut réutiliser.
 - C'est un peu assimilable à une boîte noire avec des entrée (paramètres) et une sortie (valeur de retour).
+- On untilise les fonctions pour appeler un code redondant, au lieu de l'écrire plusieurs fois, on érit une fonction qu'on apelle plusieurs fois.
 ## Déclaration
 On déclare une fonction sous la forme suivante
 ```php
@@ -107,4 +108,62 @@ function fonctionRetourner2parametres(){
 }
 
 echo fonctionRetourner2parametres().' et le loup'; // $Affiche : Le choux, la chèvre et le loup
+```
+## La portée
+- Comme pour les boucles, les variables créées dans le fonction, ainsi que les paramètres d'entrée, n'existent **QUE** dans le bloc de la fonction.
+```php
+//J'initialise $a à 0;
+$a = 0;
+
+// Je créé une fonction qui aura un paramètre d'entré aussi appelé $a.
+function fctA($a){
+    
+    //J'initialise une variable $b qu vaut $a
+    $b=$a;
+}
+
+//J'appelle fctA() en lui passant 3 en paramètre, $a sera donc 3 dans la fonction fctA()
+fctA(3);
+
+echo $a; // Affiche : 0
+echo $b; // Affichera une erreur php, la variable $b n'existe pas, car elle a été créé dans la fonction fctA(), elle n'a aucune existence en dehors.
+```
+## Récursivité
+Une fonction peut s'appeler elle même, ça sapelle une fonction récusrive.
+Attention, La récursivité consomme de la mémoire, il y a donc une limite par défaut du nombre d'appel récursif. Un nombre trop élevée peut renvoyer une erreur.
+Typiquement, on l'utilise par exemple pour lister des fichiers ou des dossiers dans une arboresence :
+```php
+//Création de la fonction listeFichiers, elle retournera une liste de tous les fichiers de tous les répertoires qui se trouvent dans $cheminRepetroire
+function listeFichiers($cheminRepetroire){
+
+    // scandir() est une fonction native de php qui permet de lister tous les fichiers et dossiers, ils sont retournés dans un tableau.
+    // $listeRepetroire contient donc un tableau scalaire dont chaque valeur est le nom d'un dossier ou d'un fichier.
+    $listeRepetroire = scandir($cheminRepetroire);
+
+    //Je parcours le tableau $listeRepertoire. La variable $nomFichierOuDossier contiendra donc le nom de dossier ou fichier trouvé.
+    foreach($listeRepertoire as $nomFichierOuDossier){
+
+        // On initialise une variable avec le chemin complet qui pointe vers le dossier ou le fichier qui est actuellement parcouri par le foreach
+        $cheminComplet = $cheminRepetroire.'/'$nomFichierOuDossier;
+
+        //Si le nom pointe sur un dossier, alors il faut aussi le parcourir
+        if(is_dir($cheminComplet)){//is_dir() renvoie true si le chemin donné point sur un dossier, false s'il pointe sur un fichier.
+
+            //On parcours le dossier trouvé en appelant la même fonction dans laquelle on est. Elle vérifiera donc à son tour s'il y a des dossiers dans le nouveau répertoire, et ainsi de suite.
+            listeFichiers($cheminComplet);
+        }
+        else{ // $cheminComplet pointe donc sur un fichier, car is_dir() a renvoyé false.
+
+            // On cherche à afficher le nom des fichiers, et on a le nom et de chemin d'un fichier, on l'affiche donc
+            echo "<p>$cheminComplet</p>";
+
+        }
+    }
+}
+
+// Je donne le chemin du dossier à scanner dans $scannerIci
+$scannerIci = "/home/Garage404";
+
+//J'ai créé la fonction listeFichiers() qui va m'afficher tous les fichiers du répertoire, je peux donc l'appeler.
+listeFichiers($scannerIci);
 ```
