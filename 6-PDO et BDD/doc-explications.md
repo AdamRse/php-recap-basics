@@ -96,4 +96,47 @@ $sql = "INSERT INTO table1 VALUES('colonne1', 'colonne2')";
 
 // J'execute la requête avec la méthode query de l'objet PDO
 $objetPDO->query($sql);
+
+// Si la requête échoue, on peut le savoir, car query() renvoie un false dans ce cas. Ne pas oublier le ! pour inverser la condition
+if(!$objetPDO->query($sql)){
+
+    // Si la méthode query renvoie une erreur, on affiche :
+    echo "<p>La requête <b>$sql</b> a échoué</p>";
+
+    // La méthode errorInfo() renvoie un tableau avec le retour de l'erreur SQL, avec un code et une description (comme sur phpmyadmin)
+    echo "<pre>".print_r($objetPDO->errorInfo())."</pre>";
+
+}
+```
+### Valeur de retour de la méthode query
+Quand on fait un UPDATE, INSRT INTO, OU DELETE, on n'a pas besoin de récupérer une réponse de la base de données.
+En revanche si on fait un SELECT, on attend des données en retour.
+La méthode query() dans ce cas va renvoyer **un autre objet** (PDOStatement https://www.php.net/manual/fr/class.pdostatement.php) contenant ces valeurs, et des **méthodes** pour transposer ces valeurs en une variable plus lisible (en tableau générallement).
+
+Avec la méthode fetch() :
+```php
+// J'instancie un objet PDO pour me connecter à la Bdd
+$objetPDO = new PDO('mysql:host=127.0.0.1;dbname=MaBdd', "utilisateur", "mot de passe");
+
+// Je construit une requête
+$sql = "SELECT * FROM uneTable";
+
+// J'execute la requête SQL via la méthode query, et je récupère le résultat dans une variable. Si query() réussit à faire sa requete, ce sera un objet, sinon ce sera false
+$objetDeDonnees = $objetPDO->query($sql);
+
+// Si la requête renvoie un objet, la requête a fonctionné.
+if($objetDeDonnees){ // l'objet sera considéré come true par php dans une condition, car ce qui n'est pas un booléen et true par défaut.
+
+    // fetch() va créer un tableau pour chaque LIGNE de la table, on le récupère dans $tableauLigne, et on le lit dans un while.
+    // Quand il n'y aura plus de ligne à lire, fetch() va renvoyer null (vide) à $tableauLigne, et le while va considérer null comme false, donc sortir de la boucle.
+    while($tableauLigne = $objetDeDonnees->fetch(PDO::FETCH_ASSOC)){//PDO::FETCH_ASSOC : on veut un tablau associatif avec le nom des cononnes en tant qu'index.
+
+        //On affiche la valeur. Pour la ligne donnée par fetch(), on a la colonne dans l'index du tableau $tableauLigne.
+        echo "<p>".$tableauLigne["NomColonne"]."</p>";
+    }
+}
+else{// Si $objetDonnees est false, on rentrera ici
+
+    echo "<p>Erreur de requête : </p><pre>".print_r($objetPDO->errorInfo())."</pre>";
+}
 ```
