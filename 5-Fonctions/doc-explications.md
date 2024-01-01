@@ -1,11 +1,11 @@
 # Fonctions
 - Une fonction est un bloc de code qu'on peut réutiliser.
 - C'est un peu assimilable à une boîte noire avec des entrée (paramètres) et une sortie (valeur de retour).
-- On untilise les fonctions pour appeler un code redondant, au lieu de l'écrire plusieurs fois, on érit une fonction qu'on apelle plusieurs fois.
+- On utilise les fonctions pour éviter la répétition de code. Au lieu d'écrire le même code plusieurs fois, on crée une fonction qu'on appelle plusieurs fois.
 ## Déclaration
 On déclare une fonction sous la forme suivante
 ```php
-function nomDeLaFunction(){
+function nomDeLaFonction(){
     //Code de la fonction
     //On peut retourner un résultat si on le souhaite.
 }
@@ -13,14 +13,14 @@ function nomDeLaFunction(){
 La fonction n'est pas appelée de cette façon, elle est juste déclarée, elle ne s'exécute pas.
 Pour éxécuter la fonction, il faut l'appeler par son nom :
 ```php
-nomDeLaFunction();
+nomDeLaFonction();
 ```
 ## Entrées / Sortie
 - Les fonctions peuvent avoir de multiples paramètres d'entrée, mais un seul retour.
 - Les paramètres d'entrée et le retour peuvent être de tout types.
 - Une fonction ne retourne pas forcément quelque chose.
 ```php
-function nomDeLaFunction($parametre1, $paramètre2){
+function nomDeLaFonction($parametre1, $paramètre2){
     //Je peux coder avec les paramètres que j'ai reçu, ils peuvent changer à chaque appel de la fonction, c'est pourquoi on utilise des variables.
     //C'est à l'appel de la fonction qu'on décide la valeur des paramètres d'entrée.
     //Une fonction avec 2 paramètre d'entrée comme ici devra toujours être appelée en lui donnant 2 valeurs en entrée.
@@ -30,12 +30,12 @@ function nomDeLaFunction($parametre1, $paramètre2){
 }
 
 //Appel de la fonction avec 2 paramètres d'entrée. On additionne les 2 dans la fonction, et on retourne le résultat à la place de la fontion.
-$addition = nomDeLaFunction(2, 8);// C'est comme si on avait fait : $addition = 2+8
+$addition = nomDeLaFonction(2, 8);// C'est comme si on avait fait : $addition = 2+8
 ```
 Si les paramètres ont une valeur par défaut, on n'est pas obligé de rentrer le paramètre à l'utilisation.
 Exemple :
 ```php
-function nomDeLaFunction($parametre1, $paramètre2 = 10){
+function nomDeLaFonction($parametre1, $paramètre2 = 10){
 
     //On retourne l'addition des 2 paramètres
     return $parametre1 + $parametre2;
@@ -43,10 +43,10 @@ function nomDeLaFunction($parametre1, $paramètre2 = 10){
 }
 
 //On a déclaré la fonction avec 2 paramètres, mais le 2ème vaut 10 si on n'envoie qu'un paramètre.
-$addition = nomDeLaFunction(2); // $addition = 2 + 10
+$addition = nomDeLaFonction(2); // $addition = 2 + 10
 
 //On peut tout de mème envoyer le 2ème paramètre, il remplacera la valeur par défaut qui est 10.
-$addition = nomDeLaFunction(2, 3); // $addition = 2 + 3
+$addition = nomDeLaFonction(2, 3); // $addition = 2 + 3
 ```
 
 > [!CAUTION]
@@ -63,10 +63,10 @@ $ferme = array("choux", "chèvre");
 echo retournePremierIndex($ferme); // Affiche : choux
 
 //On a déclaré la fonction avec 2 paramètres, mais le 2ème vaut 10 si on n'envoie qu'un paramètre.
-$addition = nomDeLaFunction(2); // $addition = 2 + 10
+$addition = nomDeLaFonction(2); // $addition = 2 + 10
 
 //On peut tout de mème envoyer le 2ème paramètre, il remplacera la valeur par défaut qui est 10.
-$addition = nomDeLaFunction(2, 3); // $addition = 2 + 3
+$addition = nomDeLaFonction(2, 3); // $addition = 2 + 3
 ```
 ## Le return
 Un return renvoie quelque chose, mais il arrête l'execution de la fonction du même coup. S'il reste du code dans la fonction après le return, il ne sera pas exécuté.
@@ -144,7 +144,7 @@ function listeFichiers($cheminRepetroire){
     foreach($listeRepertoire as $nomFichierOuDossier){
 
         // On initialise une variable avec le chemin complet qui pointe vers le dossier ou le fichier qui est actuellement parcouri par le foreach
-        $cheminComplet = $cheminRepetroire.'/'$nomFichierOuDossier;
+        $cheminComplet = $cheminRepetroire.'/'.$nomFichierOuDossier;
 
         //Si le nom pointe sur un dossier, alors il faut aussi le parcourir
         if(is_dir($cheminComplet)){//is_dir() renvoie true si le chemin donné point sur un dossier, false s'il pointe sur un fichier.
