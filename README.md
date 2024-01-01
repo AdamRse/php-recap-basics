@@ -10,10 +10,10 @@
 
 > [!TIP]
 > Dans la doc officielle https://www.php.net, la structure de la page est souvent la suivante :
->    -Une description
->    -La syntaxe complète, avec entre parenthèses les paramètres obligatoires, et entre crochet les optionnels.
->    -La description des paramètres attendus
->        -les paramètres renvient parfois sur une page complète pour avoir de détail du paramètre sélectionné
->    -La description de ce qui est retourné (souvent pour une fonction par exemple)
->    -Des exemples d'utilisation
->        -Les exemples sont très utiles et parlants car ils donnent du contexte, allez toujours les voir si ça vous parait flou, ça aide BEAUCOUP
+>    - Une description
+>    - La syntaxe complète, avec entre parenthèses les paramètres obligatoires, et entre crochet les optionnels.
+>    - La description des paramètres attendus
+>        - les paramètres renvient parfois sur une page complète pour avoir de détail du paramètre sélectionné
+>    - La description de ce qui est retourné (souvent pour une fonction par exemple)
+>    - Des exemples d'utilisation
+>        - Les exemples sont très utiles et parlants car ils donnent du contexte, allez toujours les voir si ça vous parait flou, ça aide BEAUCOUP
