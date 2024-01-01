@@ -8,10 +8,10 @@ Il est déclaré (créé) sous forme de **classe**, la classe est comme un modè
 class Humain
 {
     //Attribut de type publique, donc accessible dirrectement après avoir instancié l'objet.
-    public $_nom = "Zelda"
+    public $_nom = "Zelda";
 
     //Attribut de type privé, donc accessible uniquement à l'intreieur de la classe, donc via une méthode
-    private $_compteEnBanque = "RIB FR00078973"
+    private $_compteEnBanque = "RIB FR00078973";
 
     //Méthode de type publique, c'est une sorte de fonction que l'objet peut appeler.
     public function AfficherCompteEnBanque(){
@@ -26,10 +26,10 @@ $humain = new Humain();// Le new créée un objet de la classe, ici de la classe
 
 
 //Dans l'objet humain, j'appelle l'attribut _nom
-echo $humain->_nom // Affichera : "Zelda"
+echo $humain->_nom // Affichera : "Zelda";
 
 //Dans l'objet humain, j'appelle l'attribut $_compteEnBanque
-echo $humain->_compteEnBanque // ERREUR : On essaye d'accéder directement à un attribut privé (private), l'attribut ne s'affichera pas.
+echo $humain->_compteEnBanque; // ERREUR : On essaye d'accéder directement à un attribut privé (private), l'attribut ne s'affichera pas.
 
 //Dans l'objet humain, j'appelle la méthode AfficherCompteEnBanque() (une méthode est très similaire à une fonction)
 //L'attribut $_compteEnBanque est privé, mais il est appelé à l'intérieur d'une méthode de l'objet $humain, donc la méthode a le droit d'y accéder
@@ -71,7 +71,7 @@ $nomBdd = "MaBdd";
 $utilisateur = "utilisateur";
 $mdp = "mot de passe";
 
-$objetPDO = new PDO($sgbd.':host='.$adresse.';dbname='$nomBdd, $utilisateur, $mdp);
+$objetPDO = new PDO($sgbd.':host='.$adresse.';dbname='.$nomBdd, $utilisateur, $mdp);
 ```
 Nous sommes connectés, maintenant on peut utiliser les **méthodes** de PDO pour envoyer des requêtes.
 ### Méthode query
